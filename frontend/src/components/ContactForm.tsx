@@ -11,7 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const BACKEND_API_URL = "http://localhost:3000/api/connect"; // TODO: Replace with actual endpoint
+const BACKEND_API_URL = import.meta.env.VITE_BACKEND_URL;
 
 const ContactForm = () => {
   const ref = useRef(null);

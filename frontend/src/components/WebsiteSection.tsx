@@ -52,7 +52,7 @@ const WebsiteSection = () => {
           </motion.div>
 
           <motion.div
-            className="relative"
+            className="relative w-full"
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
