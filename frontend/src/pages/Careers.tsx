@@ -20,6 +20,7 @@ interface Vacancy {
   type: string;
   description: string;
   requirements: string[];
+  formLink: string;
 }
 
 const vacancies: Vacancy[] = [
@@ -31,6 +32,7 @@ const vacancies: Vacancy[] = [
     type: "Full-time",
     description: "Manage and grow social media presence for multiple client brands. Create content calendars, engage with audiences, and drive measurable growth.",
     requirements: ["2+ years social media experience", "Proficiency in Meta Business Suite", "Strong copywriting skills", "Analytics & reporting experience"],
+    formLink: "https://forms.gle/duZtV4smcE2U15iXA"
   },
   {
     id: 2,
@@ -40,6 +42,7 @@ const vacancies: Vacancy[] = [
     type: "Full-time",
     description: "Edit high-quality UGC and brand videos for social media ads and organic content. Work with creators and the content team to produce scroll-stopping visuals.",
     requirements: ["Proficiency in Premiere Pro / After Effects", "Understanding of social media trends", "Portfolio of edited short-form content", "Quick turnaround ability"],
+    formLink: ""
   },
   {
     id: 3,
@@ -49,6 +52,7 @@ const vacancies: Vacancy[] = [
     type: "Full-time",
     description: "Build and maintain high-performance websites and e-commerce stores for clients. Work with modern frameworks and deliver pixel-perfect, responsive designs.",
     requirements: ["Strong HTML/CSS/JS skills", "Experience with React or Next.js", "Shopify / WooCommerce knowledge", "Eye for UI/UX design"],
+    formLink: ""
   },
   {
     id: 4,
@@ -58,6 +62,7 @@ const vacancies: Vacancy[] = [
     type: "Full-time / Freelance",
     description: "Create stunning visual content for social media posts, ads, brand identities, and marketing materials.",
     requirements: ["Proficiency in Figma & Adobe Suite", "Strong typography & color sense", "Portfolio showcasing social media designs", "Brand identity experience"],
+    formLink: ""
   },
 ];
 
@@ -68,53 +73,10 @@ const values = [
   { icon: Zap, title: "Creative Edge", desc: "We push creative boundaries to deliver scroll-stopping work." },
 ];
 
-const BACKEND_API_URL = "https://your-backend-api.com/api/applications"; // TODO: Replace
-
 const Careers = () => {
   const [selected, setSelected] = useState<Vacancy | null>(null);
   const [applyingTo, setApplyingTo] = useState<Vacancy | null>(null);
-  const [applicationData, setApplicationData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    experience: "",
-    portfolio: "",
-    coverLetter: "",
-  });
   const [applicationSubmitted, setApplicationSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleApply = (vacancy: Vacancy) => {
-    setSelected(null);
-    setApplyingTo(vacancy);
-    setApplicationSubmitted(false);
-    setApplicationData({ name: "", email: "", phone: "", experience: "", portfolio: "", coverLetter: "" });
-  };
-
-  const submitApplication = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const payload = {
-      ...applicationData,
-      position: applyingTo?.title,
-      department: applyingTo?.department,
-      submittedAt: new Date().toISOString(),
-    };
-
-    try {
-      await fetch(BACKEND_API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-    } catch (err) {
-      console.error("Application submission failed:", err);
-    }
-
-    setIsSubmitting(false);
-    setApplicationSubmitted(true);
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -306,7 +268,7 @@ const Careers = () => {
               </ul>
 
               <button
-                onClick={() => handleApply(selected)}
+                onClick={() => window.open(selected.formLink, "_blank")}
                 className="block w-full py-3 bg-primary text-primary-foreground text-center rounded-lg font-semibold hover:opacity-90 transition-opacity font-body"
               >
                 Apply Now
@@ -345,94 +307,7 @@ const Careers = () => {
               </button>
             </div>
           ) : (
-            <form onSubmit={submitApplication} className="space-y-4 mt-2">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1 block font-body">Full Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={applicationData.name}
-                    onChange={(e) => setApplicationData({ ...applicationData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground text-sm focus:border-primary focus:outline-none transition-colors font-body"
-                    placeholder="Your full name"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1 block font-body">Email *</label>
-                  <input
-                    type="email"
-                    required
-                    value={applicationData.email}
-                    onChange={(e) => setApplicationData({ ...applicationData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground text-sm focus:border-primary focus:outline-none transition-colors font-body"
-                    placeholder="you@email.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1 block font-body">Phone *</label>
-                  <input
-                    type="tel"
-                    required
-                    value={applicationData.phone}
-                    onChange={(e) => setApplicationData({ ...applicationData, phone: e.target.value })}
-                    className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground text-sm focus:border-primary focus:outline-none transition-colors font-body"
-                    placeholder="+91 XXXXX XXXXX"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1 block font-body">Years of Experience *</label>
-                  <select
-                    required
-                    value={applicationData.experience}
-                    onChange={(e) => setApplicationData({ ...applicationData, experience: e.target.value })}
-                    className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground text-sm focus:border-primary focus:outline-none transition-colors font-body"
-                  >
-                    <option value="">Select</option>
-                    <option value="0-1 years">0–1 years</option>
-                    <option value="1-2 years">1–2 years</option>
-                    <option value="2-4 years">2–4 years</option>
-                    <option value="4-6 years">4–6 years</option>
-                    <option value="6+ years">6+ years</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="text-sm text-muted-foreground mb-1 block font-body">Portfolio / Resume Link *</label>
-                <input
-                  type="url"
-                  required
-                  value={applicationData.portfolio}
-                  onChange={(e) => setApplicationData({ ...applicationData, portfolio: e.target.value })}
-                  className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground text-sm focus:border-primary focus:outline-none transition-colors font-body"
-                  placeholder="https://your-portfolio.com or Google Drive link"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-muted-foreground mb-1 block font-body">Cover Letter *</label>
-                <textarea
-                  required
-                  rows={4}
-                  value={applicationData.coverLetter}
-                  onChange={(e) => setApplicationData({ ...applicationData, coverLetter: e.target.value })}
-                  className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground text-sm focus:border-primary focus:outline-none transition-colors resize-none font-body"
-                  placeholder="Tell us why you'd be a great fit for this role..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity font-body flex items-center justify-center gap-2 disabled:opacity-50"
-              >
-                {isSubmitting ? "Submitting..." : "Submit Application"}
-              </button>
-            </form>
+            <a href=""></a>
           )}
         </DialogContent>
       </Dialog>
