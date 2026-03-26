@@ -70,7 +70,7 @@ const PricingSection = () => {
             to="/pricing"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity font-body text-lg"
           >
-            Explore More & Build Your Package <ArrowRight size={18} />
+            Explore More<ArrowRight size={18} />
           </Link>
           <p className="text-sm text-muted-foreground font-body mt-3">
             Compare all plans, see market insights, and create a custom package

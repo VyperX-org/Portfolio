@@ -33,6 +33,7 @@ const VideoMockup = ({ index }: { index: number }) => {
   const current = videoScenes[scene][index];
 
   return (
+    <section className="w-full">
     <motion.div
       className="w-28 sm:w-36 h-48 sm:h-60 card-gradient border border-border rounded-2xl flex flex-col items-center justify-center relative overflow-hidden group"
       whileHover={{ scale: 1.05 }}
@@ -92,6 +93,7 @@ const VideoMockup = ({ index }: { index: number }) => {
         <Play size={24} className="text-primary" fill="hsl(166 76% 58%)" />
       </div>
     </motion.div>
+    </section>
   );
 };
 
@@ -100,7 +102,7 @@ const UGCSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding" ref={ref}>
+    <section className="section-padding w-full" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Video mockups */}
@@ -110,7 +112,7 @@ const UGCSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex gap-4 justify-center">
+            <div className="flex gap-4 justify-center flex-wrap">
               {[0, 1, 2].map((i) => (
                 <motion.div
                   key={i}

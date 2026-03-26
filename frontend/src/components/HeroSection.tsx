@@ -3,14 +3,14 @@ import { ArrowRight, Zap } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center section-padding pt-32 overflow-hidden w-full">
+    <section className="relative min-h-screen flex items-center justify-center section-padding pt-32">
       {/* Background effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-primary/8 blur-[100px]" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[80vw] max-w-96 h-[80vw] max-h-96 rounded-full bg-primary/5 blur-[100px]" />
+      <div className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[70vw] max-w-72 h-[70vw] max-h-72 rounded-full bg-primary/8 blur-[80px]" />   
       </div>
-
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
+ 
+      <div className="relative z-10 max-w-5xl mx-auto text-center px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
