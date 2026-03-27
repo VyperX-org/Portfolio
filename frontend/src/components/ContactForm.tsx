@@ -11,7 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const BACKEND_API_URL = import.meta.env.BACKEND_URL;
+const BACKEND_API_URL = import.meta.env.VITE_BACKEND_URL;
 
 const ContactForm = () => {
   const ref = useRef(null);
@@ -46,7 +46,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
   if (selectedPlans.length === 0) {
-     alert("Please select at least one plan");
+     alert("Please select at least one plan from the custom pricing section");
      setIsSubmitting(false);
     return;
   }
@@ -99,7 +99,6 @@ const ContactForm = () => {
   } finally {
     setIsSubmitting(false); 
   }
-
 
     // Also send via WhatsApp
     const planSummary = selectedPlans.length > 0
