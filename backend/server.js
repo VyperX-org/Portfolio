@@ -20,7 +20,8 @@ const startServer = async() => {
   app.use(passport.initialize());
 
   const allowedOrigins = [
-    'http://localhost:8080'
+    'http://localhost:8080',
+    'https://portfolio-vyperx.vercel.app'
   ];
 
   app.use(cors({
