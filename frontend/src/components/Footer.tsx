@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Twitter, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
+import { Instagram, Linkedin, Twitter, Facebook, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.jpeg";
 
@@ -19,6 +19,7 @@ const Footer = () => {
               {[
                 { icon: Instagram, href: "https://instagram.com/vyperx" },
                 { icon: Twitter, href: "https://twitter.com/vyperx" },
+                { icon: Facebook, href: "https://www.facebook.com/people/VyperX/61578409419150" },
                 { icon: Linkedin, href: "https://linkedin.com/company/vyperx" },
               ].map(({ icon: Icon, href }) => (
                 <a
