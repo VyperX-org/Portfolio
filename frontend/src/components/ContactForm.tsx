@@ -11,7 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const BACKEND_API_URL = import.meta.env.VITE_BACKEND_URL;
+const BACKEND_API_URL = import.meta.env.BACKEND_URL;
 
 const ContactForm = () => {
   const ref = useRef(null);
