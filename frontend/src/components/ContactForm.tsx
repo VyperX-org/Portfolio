@@ -14,6 +14,7 @@ import {
 const BACKEND_API_URL = import.meta.env.VITE_BACKEND_URL;
 
 const ContactForm = () => {
+  console.log(BACKEND_API_URL)
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { selectedPlans } = useSelectedPlans();

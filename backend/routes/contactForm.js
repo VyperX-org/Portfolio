@@ -19,6 +19,8 @@ router.post("/connect", async (req, res) => {
     plans,
     totalOriginal,
     totalDiscounted } = req.body;
+    console.log(req.body);
+    
 
     if (!plans || !Array.isArray(plans)) {
       return res.status(400).json({ error: "Plans are required" });
@@ -83,6 +85,11 @@ router.post("/connect", async (req, res) => {
         pass: process.env.EMAIL_PASS,
       },
     });
+    console.log(process.env.EMAIL_USER);
+    console.log(process.env.EMAIL_PASS);
+    console.log(process.env.MONGODB_URI);
+    
+    
 
     const plansListHTML = formattedPlans
       .map(
