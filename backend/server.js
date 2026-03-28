@@ -50,7 +50,10 @@ const startServer = async() => {
 
   // Book a call - Sends data to the database
   app.use("/api", (req, res, next) => {
-    console.log("route is hit");
+     res.status(200).json({ 
+      message: 'Data is ready to be received',
+      timestamp: new Date().toISOString()
+    });
     req.db = userConnection;
     next();
   }, contactForm);
