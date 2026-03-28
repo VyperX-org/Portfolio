@@ -7,7 +7,7 @@ dotenv.config();
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post("/connect", async (req, res) => {
   try {
     const { name,
     email,

@@ -49,7 +49,7 @@ const startServer = async() => {
 });
 
   // Book a call - Sends data to the database
-  app.use("/api/connect", (req, res, next) => {
+  app.use("/api", (req, res, next) => {
     console.log("route is hit");
     req.db = userConnection;
     next();
