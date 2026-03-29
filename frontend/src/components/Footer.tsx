@@ -21,7 +21,7 @@ const Footer = () => {
                 { icon: Twitter, href: "https://twitter.com/vyperx_in" },
                 { icon: Linkedin, href: "https://linkedin.com/company/vyperx" },
                 { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61578409419150" },
-                { icon: Youtube, href: "https://youtube.com/vyperx.official" },
+                { icon: Youtube, href: "https://youtube.com/@vyperx.official" },
               ].map(({ icon: Icon, href }) => (
                 <a
                   key={href}
