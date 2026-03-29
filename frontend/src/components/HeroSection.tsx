@@ -54,7 +54,7 @@ const HeroSection = () => {
             Start Scaling <ArrowRight size={18} />
           </a>
           <a
-            href="#pricing"
+            href="/pricing"
             className="px-8 py-4 border border-border text-foreground font-semibold rounded-lg text-lg hover:bg-secondary transition-colors flex items-center justify-center"
           >
             View Plans
