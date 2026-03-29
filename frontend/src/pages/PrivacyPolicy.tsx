@@ -40,10 +40,10 @@ const PrivacyPolicy = () => (
         <p>We do not sell, trade, or rent your personal information to third parties. We may share information with trusted service providers who assist us in operating our business.</p>
 
         <h2 className="text-xl font-display font-semibold text-foreground">5. Your Rights</h2>
-        <p>You have the right to access, update, or delete your personal information. Contact us at hello@vyperx.agency for any data-related requests.</p>
+        <p>You have the right to access, update, or delete your personal information. Contact us at contact@vyperx.in for any data-related requests.</p>
 
         <h2 className="text-xl font-display font-semibold text-foreground">6. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us at hello@vyperx.agency.</p>
+        <p>If you have any questions about this Privacy Policy, please contact us at contact@vyperx.in.</p>
       </div>
     </div>
   </div>

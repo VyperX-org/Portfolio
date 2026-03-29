@@ -68,11 +68,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-muted-foreground font-body">
               <li className="flex items-center gap-2">
                 <Mail size={14} className="text-primary shrink-0" />
-                <a href="mailto:hello@vyperx.agency" className="hover:text-primary transition-colors">hello@vyperx.agency</a>
+                <a href="mailto:contact@vyperx.in" className="hover:text-primary transition-colors">contact@vyperx.in</a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={14} className="text-primary shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-primary transition-colors">+91 98765 43210</a>
+                <a href="tel:+91 70447 00987" className="hover:text-primary transition-colors">+91 70447 00987</a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={14} className="text-primary shrink-0 mt-0.5" />

@@ -40,7 +40,7 @@ const TermsConditions = () => (
         <p>VyperX shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services.</p>
 
         <h2 className="text-xl font-display font-semibold text-foreground">7. Contact</h2>
-        <p>For questions about these Terms & Conditions, contact us at hello@vyperx.agency.</p>
+        <p>For questions about these Terms & Conditions, contact us at contact@vyperx.in.</p>
       </div>
     </div>
   </div>
