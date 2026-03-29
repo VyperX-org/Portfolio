@@ -1,6 +1,6 @@
-import { Instagram, Linkedin, Twitter, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
+import { Instagram, Linkedin, Twitter, Facebook, Youtube, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/trans-logo.webp";
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -17,9 +17,11 @@ const Footer = () => {
             </p>
             <div className="flex gap-3">
               {[
-                { icon: Instagram, href: "https://instagram.com/vyperx" },
-                { icon: Twitter, href: "https://twitter.com/vyperx" },
+                { icon: Instagram, href: "https://instagram.com/vyperx.in" },
+                { icon: Twitter, href: "https://twitter.com/vyperx_in" },
                 { icon: Linkedin, href: "https://linkedin.com/company/vyperx" },
+                { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61578409419150" },
+                { icon: Youtube, href: "https://youtube.com/vyperx.official" },
               ].map(({ icon: Icon, href }) => (
                 <a
                   key={href}
