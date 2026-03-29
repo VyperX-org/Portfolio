@@ -93,11 +93,6 @@ const ContactForm = () => {
     setIsSubmitting(false); 
   }
 
-    // Also send via WhatsApp
-    const planSummary = selectedPlans.length > 0
-      ? `\n\nSelected Plans:\n${selectedPlans.map((p) => `• ${p.name} — ₹${formatPrice(p.discountedPrice)}${p.period ? `/${p.period}` : ""}`).join("\n")}\nTotal: ₹${formatPrice(totalDiscounted)}`
-      : "";
-
     const text = `Hello VyperX Team,
 
     We hope you are doing well.
@@ -105,7 +100,7 @@ const ContactForm = () => {
     We are reaching out to explore potential collaboration opportunities and would like to learn more about your services. We would appreciate the opportunity to connect and discuss this further.
     Looking forward to your response.`;
     const whatsappUrl = `https://wa.me/7044700987?text=${encodeURIComponent(text)}`;
-    window.open("_blank");
+    window.open(whatsappUrl,"_blank");
 
     setShowOverview(false);
     setIsSubmitting(false);

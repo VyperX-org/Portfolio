@@ -44,11 +44,9 @@ const startServer = async() => {
   });
 
   app.post("/api/connect/test", (req, res) => {
-  console.log("Test POST route hit");
   res.json({ message: "ok" });
 });
 
-  // Book a call - Sends data to the database
   app.use("/api", (req, res, next) => {
      res.status(200).json({ 
       message: 'Data is ready to be received',

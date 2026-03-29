@@ -18,9 +18,7 @@ router.post("/connect", async (req, res) => {
     message,
     plans,
     totalOriginal,
-    totalDiscounted } = req.body;
-    console.log(req.body);
-    
+    totalDiscounted } = req.body;    
 
     if (!plans || !Array.isArray(plans)) {
       return res.status(400).json({ error: "Plans are required" });
@@ -77,34 +75,26 @@ router.post("/connect", async (req, res) => {
     });
 
     const transporter = nodemailer.createTransport({
-     host: "smtp.hostinger.com",
-    port: 465,
-    secure: true,
+    service: "gmail",
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
-    console.log(process.env.EMAIL_USER);
-    console.log(process.env.EMAIL_PASS);
-    console.log(process.env.MONGODB_URI);
     
-    
+    // 🔹 Filter valid plans (price > 0)
+const validPlans = formattedPlans.filter(
+  (p) => Number(p.discountedPrice) > 0
+);
 
-    const plansListHTML = formattedPlans
-      .map(
-        (p) => `
-        <li>
-          <b>${p.name}</b> (${p.tier}) - ₹${p.discountedPrice}
-        </li>`
-      )
-      .join("");
+// 🔹 Generate plan list HTML
+const plansListHTML = validPlans
+  .map(
+    (p) => `<li><b>${p.name}</b> (${p.tier}) - ₹${p.discountedPrice}</li>`
+  )
+  .join("");
 
-      // await transporter.verify()
-      // .then(() => console.log("SMTP WORKING"))
-      // .catch((err) => console.error("SMTP ERROR:", err));
-
-    const mailOptions = {
+const mailOptions = {
   from: `"VyperX" <${process.env.EMAIL_USER}>`,
   to: email,
   subject: "Welcome to VyperX 🚀",
@@ -120,8 +110,12 @@ Here’s what you can expect:
 - Execution support from our expert team
 - A structured roadmap to scale your revenue and presence
 
-Total Investment: ₹${totalDiscounted}
-Total Savings: ₹${totalSavings}
+${
+  validPlans.length > 0
+    ? `Total Investment: ₹${totalDiscounted}
+Total Savings: ₹${totalSavings}`
+    : ""
+}
 
 Our team will connect with you shortly to begin the next steps.
 
@@ -148,6 +142,9 @@ We’re excited to build and scale with you 🚀
         <li>✔ Scalable frameworks to grow your brand sustainably</li>
       </ul>
 
+      ${
+        validPlans.length > 0
+          ? `
       <h3 style="margin-top: 20px;">📋 Your Selected Plans</h3>
       <ul>${plansListHTML}</ul>
 
@@ -156,6 +153,9 @@ We’re excited to build and scale with you 🚀
         <p><b>Total Paid:</b> ₹${totalDiscounted}</p>
         <p style="color: green;"><b>You Saved:</b> ₹${totalSavings}</p>
       </div>
+      `
+          : ""
+      }
 
       <p style="margin-top: 20px;">
         Our team will reach out shortly to kickstart your onboarding and discuss the execution roadmap.
@@ -173,13 +173,9 @@ We’re excited to build and scale with you 🚀
       <hr style="margin: 30px 0;" />
 
       <div style="text-align: center;">
-        <img 
-          src="https://yourdomain.com/logo.png" 
-          alt="VyperX Logo" 
-          style="width: 120px; opacity: 0.9;"
-        />
+        <img src="https://i.ibb.co/r2B8dd9Q/logo.jpg" alt="logo" border="0">
         <p style="font-size: 12px; color: #888;">
-          Building brands. Scaling growth. 🚀
+          Building brands. Scaling growth.
         </p>
       </div>
 
