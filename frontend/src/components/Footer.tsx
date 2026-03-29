@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <img src={logo} alt="VyperX" className="h-10 mb-4 rounded-full mix-blend-lighten" />
+            <img src={logo} alt="VyperX" className="h-10 mb-4 mix-blend-lighten" />
             <p className="text-muted-foreground text-sm mb-6 font-body">
               We don't run ads. We build growth systems that scale your brand to new heights.
             </p>
@@ -40,11 +40,11 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Services</h4>
             <ul className="space-y-3 text-sm text-muted-foreground font-body">
-              <li><a href="#pricing" className="hover:text-primary transition-colors">UGC Content</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">Website Development</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">Marketing & Advertising</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">Social Media Management</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">Meta Ads</a></li>
+              <li><a href="/pricing" className="hover:text-primary transition-colors">UGC Content</a></li>
+              <li><a href="/pricing" className="hover:text-primary transition-colors">Website Development</a></li>
+              <li><a href="/pricing" className="hover:text-primary transition-colors">Marketing & Advertising</a></li>
+              <li><a href="/pricing" className="hover:text-primary transition-colors">Social Media Management</a></li>
+              <li><a href="/pricing" className="hover:text-primary transition-colors">Meta Ads</a></li>
             </ul>
           </div>
 
@@ -54,11 +54,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-muted-foreground font-body">
               <li><a href="#services" className="hover:text-primary transition-colors">Our Process</a></li>
               <li><a href="#deliverables" className="hover:text-primary transition-colors">Deliverables</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
+              <li><a href="/pricing" className="hover:text-primary transition-colors">Pricing</a></li>
               <li><Link to="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
               <li><a href="#contact" className="hover:text-primary transition-colors">Book a Call</a></li>
-              <li><Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/policies/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/policies/terms-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
 
@@ -101,8 +101,8 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-muted-foreground font-body">
             <p>© {new Date().getFullYear()} VyperX. All rights reserved.</p>
             <div className="flex gap-4">
-              <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-              <Link to="/terms-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link>
+              <Link to="/policies/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+              <Link to="/policies/terms-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link>
             </div>
           </div>
           <button

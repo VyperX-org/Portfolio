@@ -46,11 +46,6 @@ const ContactForm = () => {
   const sendConfirmation = async () => {
     setIsSubmitting(true);
 
-  if (selectedPlans.length === 0) {
-     alert("Please select at least one plan from the custom pricing section");
-     setIsSubmitting(false);
-    return;
-  }
     const payload = {
       ...formData,
       plans: selectedPlans.map((p) => ({

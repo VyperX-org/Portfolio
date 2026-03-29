@@ -18,7 +18,7 @@ const HeroSection = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 mb-8"
         >
           <Zap size={14} className="text-primary" />
-          <span className="text-sm text-muted-foreground font-body">Marketing Agency</span>
+          <span className="text-sm text-muted-foreground font-body">Digital Marketing Agency</span>
         </motion.div>
 
         <motion.h1

@@ -4,11 +4,11 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/trans-logo.webp";
 
 const navLinks = [
-  { label: "Services", href: "services" },
-  { label: "What We Deliver", href: "deliverables" },
+  { label: "Services", href: "#services" },
+  { label: "What We Deliver", href: "#deliverables" },
   { label: "Pricing", href: "pricing" },
   { label: "Careers", href: "careers" },
-  { label: "Book a Call", href: "contact" },
+  { label: "Book a Call", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 flex items-center justify-between h-16 md:h-20">
         <a href="#" className="flex items-center">
-          <img src={logo} alt="VyperX" className="h-8 md:h-10 rounded-full object-cover mix-blend-lighten" />
+          <img src={logo} alt="VyperX" className="h-8 md:h-10 object-cover mix-blend-lighten" />
         </a>
 
         {/* Desktop */}

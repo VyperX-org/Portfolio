@@ -32,8 +32,6 @@ const Index = () => {
         <WebsiteSection />
         <UGCSection />
         <Deliverables />
-        <PricingSection />
-        <CareersSection />
         <ContactForm />
       </main>
       <Footer />

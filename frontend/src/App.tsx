@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -43,8 +43,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/careers" element={<Careers />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/policies/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/policies/terms-conditions" element={<TermsConditions />} />
+          <Route path="/privacy-policy" element={<Navigate to="/policies/privacy-policy" replace />} />
+          <Route path="/terms-conditions" element={<Navigate to="/policies/terms-conditions" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
