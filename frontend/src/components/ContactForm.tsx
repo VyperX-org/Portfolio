@@ -101,7 +101,12 @@ const ContactForm = () => {
       ? `\n\nSelected Plans:\n${selectedPlans.map((p) => `• ${p.name} — ₹${formatPrice(p.discountedPrice)}${p.period ? `/${p.period}` : ""}`).join("\n")}\nTotal: ₹${formatPrice(totalDiscounted)}`
       : "";
 
-    const text = `Hi VyperX! I'm ${formData.name} from ${formData.business} (${formData.businessSector}). I'm interested in ${formData.service}. ${formData.message}${planSummary}`;
+    const text = `Hello VyperX Team,
+
+    We hope you are doing well.
+
+    We are reaching out to explore potential collaboration opportunities and would like to learn more about your services. We would appreciate the opportunity to connect and discuss this further.
+    Looking forward to your response.`;
     const whatsappUrl = `https://wa.me/7044700987?text=${encodeURIComponent(text)}`;
     window.open("_blank");
 
@@ -156,7 +161,7 @@ const ContactForm = () => {
             )}
 
             <a
-              href="https://wa.me/7044700987?text=Hi%20VyperX!%20I'm%20interested%20in%20your%20services."
+              href="https://wa.me/7044700987?text=Hi%20VyperX!%20I'm%20interested%20in%20your%20services"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 card-gradient border border-border rounded-xl hover:border-primary/30 transition-colors"
