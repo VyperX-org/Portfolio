@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 import nodemailer from "nodemailer";
 import Order from "../models/contactForm.js";
+import {Resend} from "resend";
 
 dotenv.config();
 
@@ -74,28 +75,19 @@ router.post("/connect", async (req, res) => {
       submittedAt: new Date(),
     });
 
-    const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-    
-    // 🔹 Filter valid plans (price > 0)
-const validPlans = formattedPlans.filter(
-  (p) => Number(p.discountedPrice) > 0
-);
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const validPlans = formattedPlans.filter(
+      (p) => Number(p.discountedPrice) > 0
+    );
 
-// 🔹 Generate plan list HTML
-const plansListHTML = validPlans
-  .map(
-    (p) => `<li><b>${p.name}</b> (${p.tier}) - ₹${p.discountedPrice}</li>`
-  )
-  .join("");
+    const plansListHTML = validPlans
+      .map(
+        (p) => `<li><b>${p.name}</b> (${p.tier}) - ₹${p.discountedPrice}</li>`
+        )
+      .join("");
 
-const mailOptions = {
-  from: `"VyperX" <${process.env.EMAIL_USER}>`,
+await resend.emails.send({
+  from: `"VyperX" <contact@vyperx.in>`,
   to: email,
   subject: "Welcome to VyperX 🚀",
 
@@ -119,7 +111,7 @@ Total Savings: ₹${totalSavings}`
 
 Our team will connect with you shortly to begin the next steps.
 
-We’re excited to build and scale with you 🚀
+We’re excited to build and scale with you
 
 – Team VyperX`,
 
@@ -181,8 +173,7 @@ We’re excited to build and scale with you 🚀
 
     </div>
   `,
-};
-    await transporter.sendMail(mailOptions);
+});
 
     res.status(201).json({
       message: "Order placed & email sent successfully",
