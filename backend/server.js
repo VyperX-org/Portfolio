@@ -26,15 +26,9 @@ const startServer = async() => {
 
   app.use(cors({
     origin: "*",
-    credentials: true
+    credentials: true,
+    allowedOrigins
   }));
-
-  app.get('/check', (req, res) => {
-    res.status(200).json({ 
-      message: 'Server is up',
-      timestamp: new Date().toISOString()
-    });
-  });
 
   app.get('/api/health', (req, res) => {
     res.json({ 
@@ -48,10 +42,6 @@ const startServer = async() => {
 });
 
   app.use("/api", (req, res, next) => {
-     res.status(200).json({ 
-      message: 'Data is ready to be received',
-      timestamp: new Date().toISOString()
-    });
     req.db = userConnection;
     next();
   }, contactForm);
@@ -74,14 +64,9 @@ const startServer = async() => {
     });
   });
 
-  const PORT = 3000;
+  const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
-    console.log('');
-    console.log('='.repeat(60));
-    console.log(`📍 Port: ${PORT}`);
-    console.log(`🔗 URL: http://localhost:${PORT}`);
-    console.log('='.repeat(60));
-    console.log('');
+    console.log("Server is running");
   });
 }
 
