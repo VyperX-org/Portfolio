@@ -35,7 +35,7 @@ const startServer = async() => {
   credentials: true
 }));
 
-  app.options('*', cors());
+  app.options(/.*/, cors());
 
   app.get('/api/health', (req, res) => {
     res.json({ 
