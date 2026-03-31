@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 import express from "express";
-import nodemailer from "nodemailer";
 import Order from "../models/contactForm.js";
 import {Resend} from "resend";
 

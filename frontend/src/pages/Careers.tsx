@@ -31,28 +31,44 @@ const vacancies: Vacancy[] = [
     location: "Kolkata / Remote",
     type: "Full-time",
     description: "Manage and grow social media presence for multiple client brands. Create content calendars, engage with audiences, and drive measurable growth.",
-    requirements: ["2+ years social media experience", "Proficiency in Meta Business Suite", "Strong copywriting skills", "Analytics & reporting experience"],
-    formLink: "https://forms.gle/duZtV4smcE2U15iXA"
+    requirements: [
+      "2+ years social media experience",
+      "Proficiency in Meta Business Suite",
+      "Strong copywriting skills",
+      "Analytics & reporting experience"
+    ],
+    formLink: "https://forms.gle/Yb72ArKniXCMJdSL9"
   },
   {
     id: 2,
-    title: "Video Editor",
+    title: "Professional Video Editor",
     department: "Content",
     location: "Kolkata / Remote",
     type: "Full-time",
     description: "Edit high-quality UGC and brand videos for social media ads and organic content. Work with creators and the content team to produce scroll-stopping visuals.",
-    requirements: ["Proficiency in Premiere Pro / After Effects", "Understanding of social media trends", "Portfolio of edited short-form content", "Quick turnaround ability"],
-    formLink: ""
+    requirements: [
+      "Proficiency in Premiere Pro / After Effects",
+      "Understanding of social media trends",
+      "Portfolio of edited short-form content",
+      "Quick turnaround ability"
+    ],
+    formLink: "https://forms.gle/7zUe2Ju1L7wWSpkf8"
   },
   {
-    id: 3,
-    title: "Web Developer",
-    department: "Development",
-    location: "Kolkata / Remote",
-    type: "Full-time",
-    description: "Build and maintain high-performance websites and e-commerce stores for clients. Work with modern frameworks and deliver pixel-perfect, responsive designs.",
-    requirements: ["Strong HTML/CSS/JS skills", "Experience with React or Next.js", "Shopify / WooCommerce knowledge", "Eye for UI/UX design"],
-    formLink: ""
+  id: 3,
+  title: "Growth & Sales Development Associate",
+  department: "Sales & Growth",
+  location: "Kolkata / Remote",
+  type: "Full-time",
+  description: "Drive business growth by generating and qualifying leads, executing outbound outreach, and building a strong sales pipeline. Work closely with the marketing and strategy team to convert prospects into clients and contribute to revenue growth.",
+  requirements: [
+    "Strong communication and persuasion skills",
+    "Experience in cold outreach (calls/emails/LinkedIn)",
+    "Basic understanding of sales funnels and CRM tools",
+    "Ability to research and identify potential leads",
+    "Target-driven mindset with ownership attitude"
+  ],
+  formLink: "https://forms.gle/5knob9dPp9rF3vXq9"
   },
   {
     id: 4,
@@ -61,8 +77,11 @@ const vacancies: Vacancy[] = [
     location: "Kolkata / Remote",
     type: "Full-time / Freelance",
     description: "Create stunning visual content for social media posts, ads, brand identities, and marketing materials.",
-    requirements: ["Proficiency in Figma & Adobe Suite", "Strong typography & color sense", "Portfolio showcasing social media designs", "Brand identity experience"],
-    formLink: ""
+    requirements: [
+      "Proficiency in Figma & Adobe Suite", "Strong typography & color sense",
+      "Portfolio showcasing social media designs", "Brand identity experience"
+    ],
+    formLink: "https://forms.gle/8wHcPmpvdoEHQX8SA"
   },
 ];
 

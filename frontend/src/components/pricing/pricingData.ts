@@ -32,12 +32,12 @@ export const ugcPlans: Plan[] = [
       {
         category: "Services",
         items: [
-          "Basic scripting (structured hooks)",
-          "Clean editing (subtitles + format optimization)",
-          "Platform-ready content",
-          "Basic shot planning (angles + framing guidance)",
-          "Product positioning guidance",
-          "Basic storytelling formats (problem-solution, demo)",
+          "Basic content idea support",
+          "Basic scripting / talking points",
+          "Basic editing",
+          "Hooks for videos",
+          "1 revision per video",
+          "Final delivery in ready-to-post format",
         ],
       },
       {
@@ -63,8 +63,8 @@ export const ugcPlans: Plan[] = [
   {
     name: "Growth Creator",
     tagline: "Content designed to convert, not just look good.",
-    price: 35000,
-    discountedPrice: 25000,
+    price: 14999,
+    discountedPrice: 14999,
     period: "month",
     tier: "growth",
     featured: true,
@@ -77,12 +77,16 @@ export const ugcPlans: Plan[] = [
       {
         category: "Services",
         items: [
-          "Conversion-driven scripting",
-          "Ad-style editing (high retention)",
-          "Multiple hook variations",
-          "Scroll-stopping first 3 sec optimization",
-          "Multi-format videos (testimonial, POV, demo)",
-          "Creative direction for better ad performance",
+          "Content planning",
+          "Script writing",
+          "Strong hooks for each video",
+          "Better shoot execution",
+          "Ad-style editing",
+          "Subtitles / on-screen text",
+          "Trending audio support",
+          "CTA integration",
+          "2 revisions per video",
+          "Thumbnail frame selection",
         ],
       },
       {
@@ -118,25 +122,33 @@ export const ugcPlans: Plan[] = [
   {
     name: "Scale Creator Engine",
     tagline: "A complete content engine built to scale your revenue.",
-    price: 125000,
-    discountedPrice: 75000,
+    price: 24999,
+    discountedPrice: 24999,
     period: "month",
     tier: "scale",
     bestFor: ["Scaling brands", "eCommerce businesses", "High ad spenders"],
     sections: [
       {
         category: "Deliverables",
-        items: ["25 UGC videos", "15–20 product photos"],
+        items: ["14 UGC videos (15–60 sec each)", "15–20 product photos"],
       },
       {
         category: "Services",
         items: [
-          "Advanced scripting + multiple angles",
-          "A/B hook testing system",
-          "High-conversion creatives",
-          "Full creative strategy planning (what to shoot & why)",
-          "Multi-angle content production per product",
-          "Performance-based iteration system",
+          "Full content planning",
+          "Script writing with marketing angles",
+          "Strong hooks and CTA-worthy storytelling",
+          "2 creators included",
+          "Ad-style professional editing",
+          "Multiple content styles",
+          "Brand-based content execution",
+          "Product demo videos",
+          "Hashtag support",
+          "Meta-ready ad formats",
+          "2–3 revisions per video",
+          "Testimonial-style content",
+          "Problem-solution videos",
+          "Voiceover videos",
         ],
       },
       {
@@ -153,7 +165,7 @@ export const ugcPlans: Plan[] = [
       },
       {
         category: "Team",
-        items: ["4–6 creators", "Dedicated content manager"],
+        items: ["2–3 creators"],
       },
       {
         category: "Enhancements",
@@ -168,7 +180,7 @@ export const ugcPlans: Plan[] = [
       },
       {
         category: "Revisions",
-        items: ["3–4 revisions"],
+        items: ["2–3 revisions"],
       },
     ],
   },
@@ -342,10 +354,123 @@ export const marketingPlans: Plan[] = [
   },
 ];
 
+export const socialMediaManagementPlans: Plan[] = [
+  {
+    name: "Starter",
+    tagline: "For brands that need consistent posting and professional page handling using existing content.",
+    price: 8999,
+    discountedPrice: 15000,
+    period: "month",
+    tier: "starter",
+    bestFor: [
+      "brands with existing raw content",
+      "personal brands",
+      "startups",
+      "businesses wanting basic consistency",
+    ],
+    sections: [
+      {
+        category: "Deliverables",
+        items: [
+          "12 static / carousel posts",
+          "8 reel editing from client-provided footage",
+        ],
+      },
+      {
+        category: "Services",
+        items: [
+          "Caption writing",
+          "Hashtag strategy",
+          "Monthly content calendar",
+          "Page management",
+          "Basic story posting",
+          "Monthly report",
+        ],
+      },
+    ],
+  },
+  {
+    name: "Growth",
+    tagline: "For brands that want better consistency, stronger presentation, and more active management.",
+    price: 14999,
+    discountedPrice: 20000,
+    period: "month",
+    tier: "growth",
+    featured: true,
+    bestFor: [
+      "growing brands",
+      "ecommerce brands",
+      "service businesses",
+      "businesses active on Instagram",
+    ],
+    sections: [
+      {
+        category: "Deliverables",
+        items: [
+          "16 static / carousel posts",
+          "12 reel editing from client-provided footage",
+        ],
+      },
+      {
+        category: "Services",
+        items: [
+          "Caption writing",
+          "Hashtag strategy",
+          "Story management",
+          "Monthly content calendar",
+          "Feed planning",
+          "Basic engagement handling",
+          "Monthly insights report",
+          "Strategy improvement suggestions",
+        ],
+      },
+    ],
+  },
+  {
+    name: "Elite",
+    tagline: "For brands that want premium account management, better planning, and deeper growth support.",
+    price: 24999,
+    discountedPrice: 40000,
+    period: "month",
+    tier: "scale",
+    bestFor: [
+      "established brands",
+      "scaling businesses",
+      "founders / personal brands",
+      "businesses wanting premium page handling",
+    ],
+    sections: [
+      {
+        category: "Deliverables",
+        items: [
+          "20 static / carousel posts",
+          "16 reel editing from client-provided footage",
+        ],
+      },
+      {
+        category: "Services",
+        items: [
+          "Advanced caption writing",
+          "Hashtag strategy",
+          "Full content calendar",
+          "Story management",
+          "Feed aesthetics planning",
+          "Engagement handling",
+          "Competitor analysis",
+          "Monthly analytics report",
+          "Growth strategy suggestions",
+          "Priority support",
+        ],
+      },
+    ],
+  },
+];
+
 export const categories = [
   { label: "UGC", plans: ugcPlans },
   { label: "Website Development", plans: websitePlans },
   { label: "Marketing & Advertising", plans: marketingPlans },
+  { label: "Social Media Management", plans: socialMediaManagementPlans}
 ];
 
 export const formatPrice = (price: number) => price.toLocaleString("en-IN");
