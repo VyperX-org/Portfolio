@@ -3,6 +3,12 @@ export interface PlanDetail {
   items: string[];
 }
 
+export interface Addon {
+  name: string;
+  price: number;
+}
+
+
 export interface Plan {
   name: string;
   tagline: string;
@@ -13,6 +19,7 @@ export interface Plan {
   featured?: boolean;
   bestFor: string[];
   sections: PlanDetail[];
+  addons?: Addon[];
 }
 
 export const ugcPlans: Plan[] = [
@@ -55,9 +62,21 @@ export const ugcPlans: Plan[] = [
         ],
       },
       {
-        category: "Creator Setup",
-        items: ["1 creator", "1 revision"],
+        category: "Services",
+        items: [
+          "Basic content idea support",
+          "Basic scripting",
+          "Basic editing",
+          "Hooks for videos",
+          "1 revision per video",
+        ],
       },
+    ],
+    addons: [
+      { name: "Extra UGC video", price: 1000 },
+      { name: "Extra creator", price: 3000 },
+      { name: "Script writing (per video)", price: 500 },
+      { name: "Priority delivery", price: 2000 },
     ],
   },
   {
@@ -117,6 +136,12 @@ export const ugcPlans: Plan[] = [
         category: "Revisions",
         items: ["2 revisions"],
       },
+    ],
+    addons: [
+      { name: "Extra UGC video", price: 900 },
+      { name: "Ad usage rights extension", price: 5000 },
+      { name: "Additional creator", price: 4000 },
+      { name: "Hook testing variants", price: 3000 },
     ],
   },
   {
@@ -183,6 +208,12 @@ export const ugcPlans: Plan[] = [
         items: ["2–3 revisions"],
       },
     ],
+    addons: [
+      { name: "Extra video (bulk)", price: 800 },
+      { name: "Dedicated creator team", price: 10000 },
+      { name: "Advanced ad creatives package", price: 15000 },
+      { name: "Monthly strategy consulting", price: 10000 },
+    ],
   },
 ];
 
@@ -190,81 +221,128 @@ export const websitePlans: Plan[] = [
   {
     name: "Launch Store",
     tagline: "Launch your brand with a strong digital foundation.",
-    price: 30000,
-    discountedPrice: 18000,
+    price: 35000,
+    discountedPrice: 25000,
     tier: "starter",
     bestFor: ["New businesses entering online"],
     sections: [
       {
-        category: "Highlights",
+        category: "Core Features",
         items: [
           "Shopify setup (premium theme)",
-          "Up to 15 products",
-          "Payment + shipping setup",
-          "Mobile optimized",
+          "Up to 15 products upload",
+          "Payment & shipping integration",
+          "Mobile responsive design",
           "Domain connection & setup",
-          "Navigation menu setup",
           "Basic homepage banner design",
+          "Navigation menu setup",
           "Contact form setup",
           "Social media integration",
-          "Basic checkout configuration",
+          "Basic checkout configuration"
+        ],
+      },
+      {
+        category: "Limitations",
+        items: [
+          "No custom UI/UX",
+          "No advanced CRO setup",
+          "No automation or CRM integration"
         ],
       },
     ],
+    addons: [
+      { name: "Extra product upload (per 10 products)", price: 2000 },
+      { name: "Additional landing page", price: 5000 },
+      { name: "Basic email capture popup", price: 3000 },
+      { name: "Speed optimization", price: 5000 }
+    ]
   },
+
   {
     name: "Growth Store",
     tagline: "Built to convert visitors into paying customers.",
-    price: 75000,
-    discountedPrice: 45000,
+    price: 100000,
+    discountedPrice: 80000,
     tier: "growth",
     featured: true,
     bestFor: ["Brands running ads & scaling online"],
     sections: [
       {
-        category: "Highlights",
+        category: "Core Features",
         items: [
-          "Custom UI/UX",
+          "Custom UI/UX design",
           "Conversion-focused pages",
           "Landing page for ads",
-          "Pixel + tracking setup",
-          "CRO elements",
+          "Pixel & tracking setup (Meta, Google)",
+          "CRO elements (CTA, urgency, trust badges)",
           "Advanced homepage sections (USP, testimonials)",
-          "Trust badges & social proof integration",
           "Upsell & cross-sell setup",
           "Email capture popups",
-          "Basic email flow setup (welcome/lead capture)",
-          "Speed optimization (improved loading time)",
+          "Basic email automation (welcome flow)",
+          "Speed optimization",
+          "Basic analytics setup"
+        ],
+      },
+      {
+        category: "Growth Benefits",
+        items: [
+          "Improved conversion rate",
+          "Better user experience",
+          "Optimized for paid ads",
+          "Increased customer trust"
         ],
       },
     ],
+    addons: [
+      { name: "Advanced email flows (abandoned cart, retention)", price: 15000 },
+      { name: "Additional landing page", price: 7000 },
+      { name: "Ad creative design (per set)", price: 10000 },
+      { name: "Advanced CRO audit & optimization", price: 20000 },
+      { name: "CRM integration", price: 25000 }
+    ]
   },
+
   {
     name: "Scale Store Engine",
     tagline: "A complete eCommerce system designed for revenue growth.",
-    price: 150000,
-    discountedPrice: 90000,
+    price: 250000,
+    discountedPrice: 200000,
     tier: "scale",
     bestFor: ["Established brands building full systems"],
     sections: [
       {
-        category: "Highlights",
+        category: "Core Features",
         items: [
-          "Custom design",
-          "Funnel setup",
-          "Automation + CRM",
-          "Advanced CRO + analytics",
-          "Advanced checkout optimization",
-          "Multi-step funnel structuring",
-          "Subscription / bundle setup",
-          "CRM integration",
+          "Fully custom design & development",
+          "Sales funnel setup (multi-step)",
+          "Advanced CRO + analytics tracking",
+          "CRM integration & automation",
           "Automated email flows (abandoned cart, retargeting)",
+          "Subscription / bundle setup",
+          "Advanced checkout optimization",
+          "Multi-currency & international setup",
           "Advanced analytics dashboard",
-          "Multi-currency / international setup",
+          "Performance & speed optimization"
+        ],
+      },
+      {
+        category: "Growth Engine",
+        items: [
+          "End-to-end revenue system",
+          "Automation-driven sales",
+          "Scalable infrastructure",
+          "Data-driven decision making"
         ],
       },
     ],
-  },
+    addons: [
+      { name: "Custom app integration", price: 40000 },
+      { name: "Advanced automation workflows", price: 30000 },
+      { name: "Dedicated monthly support (retainer)", price: 25000 },
+      { name: "International expansion strategy", price: 50000 },
+      { name: "Funnel optimization & scaling consulting", price: 40000 }
+    ]
+  }
 ];
 
 export const marketingPlans: Plan[] = [
@@ -292,6 +370,11 @@ export const marketingPlans: Plan[] = [
           "Ad account setup support",
         ],
       },
+    ],
+    addons: [
+      { name: "Extra campaign", price: 5000 },
+      { name: "Creative design pack", price: 10000 },
+      { name: "Landing page", price: 8000 },
     ],
   },
   {
@@ -322,6 +405,11 @@ export const marketingPlans: Plan[] = [
         ],
       },
     ],
+    addons: [
+      { name: "Extra platform", price: 15000 },
+      { name: "Advanced funnel setup", price: 25000 },
+      { name: "Creative production", price: 20000 },
+    ],
   },
   {
     name: "Scale Revenue Engine",
@@ -350,6 +438,11 @@ export const marketingPlans: Plan[] = [
           "Competitor ad tracking system",
         ],
       },
+    ],
+    addons: [
+      { name: "Dedicated creative team", price: 30000 },
+      { name: "Advanced analytics dashboard", price: 25000 },
+      { name: "Scaling consulting", price: 40000 },
     ],
   },
 ];
@@ -388,6 +481,11 @@ export const socialMediaManagementPlans: Plan[] = [
         ],
       },
     ],
+     addons: [
+      { name: "Extra reel", price: 800 },
+      { name: "Content shooting (per day)", price: 5000 },
+      { name: "Engagement handling", price: 5000 },
+    ],
   },
   {
     name: "Growth",
@@ -424,6 +522,11 @@ export const socialMediaManagementPlans: Plan[] = [
           "Strategy improvement suggestions",
         ],
       },
+    ],
+      addons: [
+      { name: "Influencer collaboration", price: 10000 },
+      { name: "Advanced engagement", price: 7000 },
+      { name: "Trend research", price: 5000 },
     ],
   },
   {
@@ -463,6 +566,11 @@ export const socialMediaManagementPlans: Plan[] = [
         ],
       },
     ],
+     addons: [
+      { name: "Dedicated manager", price: 15000 },
+      { name: "Advanced analytics", price: 10000 },
+      { name: "Content strategy consulting", price: 15000 },
+     ],
   },
 ];
 

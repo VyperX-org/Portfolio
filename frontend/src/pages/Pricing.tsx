@@ -191,7 +191,7 @@ const Pricing = () => {
         </section>
 
         {/* Contact Form */}
-        <ContactForm />
+        <ContactForm hideServiceField={true}/>
 
         {/* Footer */}
         <footer className="border-t border-border py-8 text-center">

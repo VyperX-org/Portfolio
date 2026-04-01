@@ -13,7 +13,7 @@ import {
 
 const BACKEND_API_URL = import.meta.env.VITE_BACKEND_URL;
 
-const ContactForm = () => {
+const ContactForm = ({ hideServiceField = false }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { selectedPlans } = useSelectedPlans();
@@ -250,21 +250,27 @@ const ContactForm = () => {
                     <option value="Other">Other</option>
                   </select>
                 </div>
+                {!hideServiceField && (
                 <div>
-                  <label className="text-sm text-muted-foreground mb-1 block font-body">Service Interested In *</label>
-                  <select
-                    required
-                    value={formData.service}
-                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground text-sm focus:border-primary focus:outline-none transition-colors font-body"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="UGC Content">UGC Content</option>
-                    <option value="Website Development">Website Development</option>
-                    <option value="Marketing & Advertising">Marketing & Advertising</option>
-                    <option value="Full Growth Package">Full Growth Package</option>
-                  </select>
-                </div>
+    <label className="text-sm text-muted-foreground mb-1 block font-body">
+      Service Interested In *
+    </label>
+    <select
+      required
+      value={formData.service}
+      onChange={(e) =>
+        setFormData({ ...formData, service: e.target.value })
+      }
+      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground text-sm focus:border-primary focus:outline-none transition-colors font-body"
+    >
+      <option value="">Select a service</option>
+      <option value="UGC Content">UGC Content</option>
+      <option value="Website Development">Website Development</option>
+      <option value="Marketing & Advertising">Marketing & Advertising</option>
+      <option value="Full Growth Package">Full Growth Package</option>
+    </select>
+  </div>
+)}
                 <div>
                   <label className="text-sm text-muted-foreground mb-1 block font-body">Message</label>
                   <textarea

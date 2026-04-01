@@ -1,8 +1,18 @@
 import { motion } from "framer-motion";
 import { Plan, formatPrice } from "./pricingData";
 import { Check, X, IndianRupee } from "lucide-react";
+import { useSelectedPlans } from "@/contexts/SelectedPlansContext";
 
-const PlanModal = ({ plan, onClose }: { plan: Plan; onClose: () => void }) => (
+const PlanModal = ({ plan, onClose }: { plan: Plan; onClose: () => void }) => 
+  {
+    const { setSelectedPlans } = useSelectedPlans();
+
+    const handleGetStarted = () => {
+      setSelectedPlans([plan]); // only this plan
+      onClose(); // close modal
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    };
+    return(
   <motion.div
     className="fixed inset-0 z-50 flex items-center justify-center p-4"
     initial={{ opacity: 0 }}
@@ -63,16 +73,15 @@ const PlanModal = ({ plan, onClose }: { plan: Plan; onClose: () => void }) => (
         ))}
       </div>
 
-      <a
-        href="#contact"
-        onClick={onClose}
-        className="block w-full py-3 bg-primary text-primary-foreground text-center rounded-lg font-semibold hover:opacity-90 transition-opacity font-body"
+      <button
+       onClick={handleGetStarted}
+        className="w-full py-3 bg-primary text-primary-foreground text-center rounded-lg font-semibold hover:opacity-90 transition-opacity font-body"
       >
         Get Started — ₹{formatPrice(plan.discountedPrice)}
         {plan.period ? `/${plan.period}` : ""}
-      </a>
+      </button>
     </motion.div>
   </motion.div>
-);
+  )};
 
 export default PlanModal;
