@@ -194,6 +194,9 @@ await emailApi.sendTransacEmail(sendSmtpEmail);
       message: "Order placed & email sent successfully",
       orderId: order._id,
     });
+    emailApi.sendTransacEmail(sendSmtpEmail)
+  .then(() => console.log("Mail sent"))
+  .catch(err => console.error("Mail error:", err));
 
   } catch (err) {
     console.error("Order creation failed:", err);
