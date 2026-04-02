@@ -4,13 +4,11 @@ import SibApiV3Sdk from "sib-api-v3-sdk";
 
 const connection = new IORedis(process.env.REDIS_URL);
 
-// 🔐 Brevo setup
 const client = SibApiV3Sdk.ApiClient.instance;
 client.authentications["api-key"].apiKey = process.env.EMAIL_API_KEY;
 
 const emailApi = new SibApiV3Sdk.TransactionalEmailsApi();
 
-// 🚀 Worker
 new Worker(
   "emailQueue",
   async (job) => {
@@ -23,7 +21,6 @@ new Worker(
       totalSavings,
     } = job.data;
 
-    // 🔹 Prepare plans HTML
     const validPlans = formattedPlans.filter(
       (p) => Number(p.discountedPrice) > 0
     );
@@ -35,7 +32,6 @@ new Worker(
       )
       .join("");
 
-    // 📩 Email object
     const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
 
     sendSmtpEmail.sender = {
