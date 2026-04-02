@@ -11,6 +11,7 @@ import Careers from "./pages/Careers.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import TermsConditions from "./pages/TermsConditions.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import TashaChatWidget from "./components/TashaChatWidget.tsx";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/terms-conditions" element={<Navigate to="/policies/terms-conditions" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <TashaChatWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

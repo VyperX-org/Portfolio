@@ -7,7 +7,7 @@ import PlanCarousel from "@/components/pricing/PlanCarousel";
 import CustomPlanBuilder from "@/components/pricing/CustomPlanBuilder";
 import ContactForm from "@/components/ContactForm";
 import { SelectedPlansProvider } from "@/contexts/SelectedPlansContext";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/trans-logo.webp";
 
 const marketGaps = [
   {
@@ -62,7 +62,7 @@ const Pricing = () => {
         <nav className="fixed top-0 left-0 right-0 z-40 glass">
           <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
             <Link to="/" className="flex items-center gap-3">
-              <img src={logo} alt="VyperX" className="h-8 md:h-10 rounded-full object-cover mix-blend-lighten" />
+              <img src={logo} alt="VyperX" className="h-8 md:h-10 object-cover mix-blend-lighten" />
             </Link>
             <Link
               to="/"
@@ -163,11 +163,10 @@ const Pricing = () => {
                 <button
                   key={cat.label}
                   onClick={() => setActiveTab(i)}
-                  className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 font-body ${
-                    activeTab === i
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                  }`}
+                  className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 font-body ${activeTab === i
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    }`}
                 >
                   {cat.label}
                 </button>
@@ -191,7 +190,7 @@ const Pricing = () => {
         </section>
 
         {/* Contact Form */}
-        <ContactForm hideServiceField={true}/>
+        <ContactForm hideServiceField={true} />
 
         {/* Footer */}
         <footer className="border-t border-border py-8 text-center">

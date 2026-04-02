@@ -7,8 +7,6 @@ import MonthlyExpect from "@/components/MonthlyExpect";
 import WebsiteSection from "@/components/WebsiteSection";
 import UGCSection from "@/components/UGCSection";
 import Deliverables from "@/components/Deliverables";
-import PricingSection from "@/components/PricingSection";
-import CareersSection from "@/components/CareersSection";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import { SelectedPlansProvider } from "@/contexts/SelectedPlansContext";

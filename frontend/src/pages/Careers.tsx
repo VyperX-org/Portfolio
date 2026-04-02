@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Briefcase, MapPin, Clock, ChevronRight, X, ArrowLeft, Users, Rocket, Heart, Zap } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/trans-logo.webp";
 import {
   Dialog,
   DialogContent,
@@ -55,20 +55,20 @@ const vacancies: Vacancy[] = [
     formLink: "https://forms.gle/7zUe2Ju1L7wWSpkf8"
   },
   {
-  id: 3,
-  title: "Growth & Sales Development Associate",
-  department: "Sales & Growth",
-  location: "Kolkata / Remote",
-  type: "Full-time",
-  description: "Drive business growth by generating and qualifying leads, executing outbound outreach, and building a strong sales pipeline. Work closely with the marketing and strategy team to convert prospects into clients and contribute to revenue growth.",
-  requirements: [
-    "Strong communication and persuasion skills",
-    "Experience in cold outreach (calls/emails/LinkedIn)",
-    "Basic understanding of sales funnels and CRM tools",
-    "Ability to research and identify potential leads",
-    "Target-driven mindset with ownership attitude"
-  ],
-  formLink: "https://forms.gle/5knob9dPp9rF3vXq9"
+    id: 3,
+    title: "Growth & Sales Development Associate",
+    department: "Sales & Growth",
+    location: "Kolkata / Remote",
+    type: "Full-time",
+    description: "Drive business growth by generating and qualifying leads, executing outbound outreach, and building a strong sales pipeline. Work closely with the marketing and strategy team to convert prospects into clients and contribute to revenue growth.",
+    requirements: [
+      "Strong communication and persuasion skills",
+      "Experience in cold outreach (calls/emails/LinkedIn)",
+      "Basic understanding of sales funnels and CRM tools",
+      "Ability to research and identify potential leads",
+      "Target-driven mindset with ownership attitude"
+    ],
+    formLink: "https://forms.gle/5knob9dPp9rF3vXq9"
   },
   {
     id: 4,
@@ -103,7 +103,7 @@ const Careers = () => {
       <nav className="fixed top-0 left-0 right-0 z-40 glass">
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="VyperX" className="h-8 md:h-10 rounded-full object-cover mix-blend-lighten" />
+            <img src={logo} alt="VyperX" className="h-8 md:h-10 object-cover mix-blend-lighten" />
           </Link>
           <Link
             to="/"
