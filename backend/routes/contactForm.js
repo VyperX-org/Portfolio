@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import Order from "../models/contactForm.js";
+import { emailQueue } from "../queue/emailQueue.js";
 
 dotenv.config();
 
@@ -194,9 +195,14 @@ await emailApi.sendTransacEmail(sendSmtpEmail);
       message: "Order placed & email sent successfully",
       orderId: order._id,
     });
-    emailApi.sendTransacEmail(sendSmtpEmail)
-  .then(() => console.log("Mail sent"))
-  .catch(err => console.error("Mail error:", err));
+    await emailQueue.add("sendEmail", {
+    email,
+    name,
+    formattedPlans,
+    totalOriginal,
+    totalDiscounted,
+    totalSavings,
+  });
 
   } catch (err) {
     console.error("Order creation failed:", err);
