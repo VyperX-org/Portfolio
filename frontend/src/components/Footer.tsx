@@ -85,7 +85,7 @@ const Footer = () => {
         {/* Map */}
         <div className="mt-12 rounded-xl overflow-hidden border border-border">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235527.45448454467!2d88.2649!3d22.5726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d5145.819434526477!2d88.48125861863033!3d22.634690679693936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e9!4m3!3m2!1d22.6312797!2d88.48505159999999!4m0!5e0!3m2!1sen!2sin!4v1775237789544!5m2!1sen!2sin"
             width="100%"
             height="250"
             style={{ border: 0 }}

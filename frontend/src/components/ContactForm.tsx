@@ -67,6 +67,7 @@ const ContactForm = ({ hideServiceField = false }) => {
   const res = await fetch(`${BACKEND_API_URL}/api/connect`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
+    credentials: "include",
     body: JSON.stringify(payload),
   });
 

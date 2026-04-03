@@ -22,7 +22,8 @@ const startServer = async() => {
   const allowedOrigins = [
     'http://localhost:8080',
     'https://portfolio-vyperx.vercel.app',
-    'https://portfolio-b82k.onrender.com'
+    'https://portfolio-b82k.onrender.com',
+    'https://vyperx.in'
   ];
 
   app.use(cors({
@@ -36,7 +37,10 @@ const startServer = async() => {
   credentials: true
 }));
 
-  app.options(/.*/, cors());
+  app.options('*', cors({
+    origin: allowedOrigins,
+    credentials: true
+  }));
 
   app.get('/api/health', (req, res) => {
     res.json({ 
