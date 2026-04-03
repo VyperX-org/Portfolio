@@ -37,10 +37,16 @@ const startServer = async() => {
   credentials: true
 }));
 
-  app.options('*', cors({
-    origin: allowedOrigins,
-    credentials: true
-  }));
+  app.options(/.*/, cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS not allowed"));
+    }
+  },
+  credentials: true
+}));
 
   app.get('/api/health', (req, res) => {
     res.json({ 
