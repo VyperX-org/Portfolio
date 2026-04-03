@@ -21,7 +21,8 @@ const startServer = async() => {
 
   const allowedOrigins = [
     'http://localhost:8080',
-    'https://portfolio-vyperx.vercel.app'
+    'https://portfolio-vyperx.vercel.app',
+    'https://portfolio-b82k.onrender.com'
   ];
 
   app.use(cors({
