@@ -189,8 +189,6 @@ sendSmtpEmail.htmlContent = `
   </div>
 `;
 
-await emailApi.sendTransacEmail(sendSmtpEmail);
-
     res.status(201).json({
       message: "Order placed & email sent successfully",
       orderId: order._id,
