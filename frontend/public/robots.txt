@@ -1,5 +1,13 @@
-User-agent: Googlebot
+User-agent: *
 Allow: /
+
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+
+Sitemap: https://vyperx.com/sitemap.xml
+
 
 User-agent: Bingbot
 Allow: /

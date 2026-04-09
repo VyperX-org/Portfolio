@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import logo from "@/assets/trans-logo.webp";
 
 const TermsConditions = () => (
+    <>
   <div className="min-h-screen bg-background">
     <nav className="fixed top-0 left-0 right-0 z-40 glass">
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
@@ -44,6 +45,7 @@ const TermsConditions = () => (
       </div>
     </div>
   </div>
+</>
 );
 
 export default TermsConditions;

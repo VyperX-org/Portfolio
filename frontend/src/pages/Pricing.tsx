@@ -8,6 +8,7 @@ import CustomPlanBuilder from "@/components/pricing/CustomPlanBuilder";
 import ContactForm from "@/components/ContactForm";
 import { SelectedPlansProvider } from "@/contexts/SelectedPlansContext";
 import logo from "@/assets/trans-logo.webp";
+import Footer from "@/components/Footer";
 
 const marketGaps = [
   {
@@ -56,6 +57,7 @@ const Pricing = () => {
   const gapInView = useInView(gapRef, { once: true, margin: "-100px" });
 
   return (
+    <>
     <SelectedPlansProvider>
       <div className="min-h-screen bg-background">
         {/* Navbar */}
@@ -200,6 +202,8 @@ const Pricing = () => {
         </footer>
       </div>
     </SelectedPlansProvider>
+        <Footer></Footer>
+    </>
   );
 };
 

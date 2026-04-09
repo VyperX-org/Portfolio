@@ -48,9 +48,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Explore */}
           <div>
-            <h4 className="font-display font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-display font-semibold mb-4">Explore</h4>
             <ul className="space-y-3 text-sm text-muted-foreground font-body">
               <li><a href="#services" className="hover:text-primary transition-colors">Our Process</a></li>
               <li><a href="#deliverables" className="hover:text-primary transition-colors">Deliverables</a></li>
