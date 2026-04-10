@@ -78,7 +78,7 @@ const PricingNetlifyFormEmbed = () => {
   }, [packagePayload]);
 
   return (
-    <section id="contact-netlify" className="section-padding pt-0">
+    <section id="contact-netlify" className="section-padding pt-0 scroll-mt-24">
       <div className="max-w-6xl mx-auto">
         <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
@@ -100,7 +100,7 @@ const PricingNetlifyFormEmbed = () => {
             ref={iframeRef}
             src={iframeSrc}
             title="VyperX Netlify Form"
-            className="h-[820px] w-full border-0"
+            className="h-[1180px] w-full border-0 md:h-[820px]"
             loading="eager"
           />
         </div>

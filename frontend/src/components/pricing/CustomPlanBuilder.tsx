@@ -35,7 +35,8 @@ const CustomPlanBuilder = () => {
 
   const handleGetStarted = () => {
     setSelectedPlans(currentSelectedPlans);
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    const target = document.getElementById("contact-netlify") ?? document.getElementById("contact");
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
