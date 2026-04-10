@@ -6,6 +6,7 @@ import { categories } from "@/components/pricing/pricingData";
 import PlanCarousel from "@/components/pricing/PlanCarousel";
 import CustomPlanBuilder from "@/components/pricing/CustomPlanBuilder";
 import ContactForm from "@/components/ContactForm";
+import PricingNetlifyFormEmbed from "@/components/pricing/PricingNetlifyFormEmbed";
 import { SelectedPlansProvider } from "@/contexts/SelectedPlansContext";
 import logo from "@/assets/trans-logo.webp";
 import Footer from "@/components/Footer";
@@ -193,6 +194,9 @@ const Pricing = () => {
 
         {/* Contact Form */}
         <ContactForm hideServiceField={true} />
+
+        {/* New Netlify Form Embed (kept alongside existing contact form) */}
+        <PricingNetlifyFormEmbed />
 
         {/* Footer */}
         <footer className="border-t border-border py-8 text-center">

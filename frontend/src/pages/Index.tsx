@@ -30,7 +30,7 @@ const Index = () => {
         <WebsiteSection />
         <UGCSection />
         <Deliverables />
-        <ContactForm />
+        {/* <ContactForm /> */}
       </main>
       <Footer />
     </SelectedPlansProvider>
