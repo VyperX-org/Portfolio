@@ -11,8 +11,6 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const BACKEND_API_URL = import.meta.env.VITE_BACKEND_URL;
-
 const ContactForm = ({ hideServiceField = false }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -45,63 +43,28 @@ const ContactForm = ({ hideServiceField = false }) => {
   const sendConfirmation = async () => {
     setIsSubmitting(true);
 
-    const payload = {
-      ...formData,
-      plans: selectedPlans.map((p) => ({
-        name: p.name,
-        tier: p.tier,
-        tagline: p.tagline,
-        price: p.price,
-        discountedPrice: p.discountedPrice,
-        period: p.period || null,
-        bestFor: p.bestFor,
-        sections: p.sections,
-      })),
-      totalOriginal,
-      totalDiscounted,
-      totalSavings: totalOriginal - totalDiscounted,
-      submittedAt: new Date().toISOString(),
-    };
-
-    try {
-  const res = await fetch(`${BACKEND_API_URL}/api/connect`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
-    body: JSON.stringify(payload),
-  });
-
-  let data;
-    try {
-      data = await res.json();
-    } catch {
-      data = null;
-    }
-
-    if (!res.ok) {
-      console.error("Backend error:", data);
-      alert(data?.error || "Something went wrong");
-      return;
-    }
-
-    setShowOverview(false);
-    setSubmitted(true);
-
-  } catch (err) {
-    console.error("Backend submission failed:", err);
-    alert("Server not reachable");
-  } finally {
-    setIsSubmitting(false); 
-  }
+    const plansSummary =
+      selectedPlans.length > 0
+        ? selectedPlans.map((plan) => `${plan.name} (${plan.tier})`).join(", ")
+        : "No plan selected";
 
     const text = `Hello VyperX Team,
 
-    We hope you are doing well.
+Name: ${formData.name || "-"}
+Email: ${formData.email || "-"}
+Phone: ${formData.phone || "-"}
+Business: ${formData.business || "-"}
+Business Sector: ${formData.businessSector || "-"}
+Service: ${formData.service || "-"}
 
-    We are reaching out to explore potential collaboration opportunities and would like to learn more about your services. We would appreciate the opportunity to connect and discuss this further.
-    Looking forward to your response.`;
+Selected Plans: ${plansSummary}
+Package Total: INR ${totalDiscounted}
+
+Message:
+${formData.message || "-"}`;
+
     const whatsappUrl = `https://wa.me/7044700987?text=${encodeURIComponent(text)}`;
-    window.open(whatsappUrl,"_blank");
+    window.open(whatsappUrl, "_blank");
 
     setShowOverview(false);
     setIsSubmitting(false);

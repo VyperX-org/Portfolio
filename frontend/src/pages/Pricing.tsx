@@ -5,7 +5,6 @@ import { ArrowLeft, TrendingUp, Target, Users, BarChart3, Shield, Lightbulb } fr
 import { categories } from "@/components/pricing/pricingData";
 import PlanCarousel from "@/components/pricing/PlanCarousel";
 import CustomPlanBuilder from "@/components/pricing/CustomPlanBuilder";
-import ContactForm from "@/components/ContactForm";
 import PricingNetlifyFormEmbed from "@/components/pricing/PricingNetlifyFormEmbed";
 import { SelectedPlansProvider } from "@/contexts/SelectedPlansContext";
 import logo from "@/assets/trans-logo.webp";
@@ -192,10 +191,7 @@ const Pricing = () => {
           </div>
         </section>
 
-        {/* Contact Form */}
-        <ContactForm hideServiceField={true} />
-
-        {/* New Netlify Form Embed (kept alongside existing contact form) */}
+        {/* Netlify Form Embed */}
         <PricingNetlifyFormEmbed />
 
         {/* Footer */}
