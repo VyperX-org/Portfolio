@@ -2,10 +2,6 @@ import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, TrendingUp, Target, Users, BarChart3, Shield, Lightbulb } from "lucide-react";
-import { categories } from "@/components/pricing/pricingData";
-import PlanCarousel from "@/components/pricing/PlanCarousel";
-import CustomPlanBuilder from "@/components/pricing/CustomPlanBuilder";
-import PricingNetlifyFormEmbed from "@/components/pricing/PricingNetlifyFormEmbed";
 import { SelectedPlansProvider } from "@/contexts/SelectedPlansContext";
 import logo from "@/assets/trans-logo.webp";
 import Footer from "@/components/Footer";
@@ -154,6 +150,19 @@ const Pricing = () => {
               </p>
             </motion.div>
 
+            <a href="mailto:contact@vyperx.in">           
+            <div className="flex justify-center items-center">
+            <button
+                    className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 font-body hover:bg-green-600
+                      ${activeTab
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      }`}
+                  >
+                    Contact us
+                  </button>
+            </div>
+            </a>
             <motion.div
               className="flex flex-wrap justify-center gap-2 mb-12"
               initial={{ opacity: 0, y: 20 }}
@@ -161,18 +170,6 @@ const Pricing = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              {categories.map((cat, i) => (
-                <button
-                  key={cat.label}
-                  onClick={() => setActiveTab(i)}
-                  className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 font-body ${activeTab === i
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                    }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
             </motion.div>
 
             <AnimatePresence mode="wait">
@@ -183,16 +180,16 @@ const Pricing = () => {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
               >
-                <PlanCarousel plans={categories[activeTab].plans} />
+                {/* <PlanCarousel plans={categories[activeTab].plans} /> */}
               </motion.div>
             </AnimatePresence>
 
-            <CustomPlanBuilder />
+            {/* <CustomPlanBuilder /> */}
           </div>
         </section>
 
         {/* Netlify Form Embed */}
-        <PricingNetlifyFormEmbed />
+        {/* <PricingNetlifyFormEmbed /> */}
 
         {/* Footer */}
         <footer className="border-t border-border py-8 text-center">
