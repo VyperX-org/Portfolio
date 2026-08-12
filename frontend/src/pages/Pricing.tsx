@@ -2,9 +2,6 @@ import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, TrendingUp, Target, Users, BarChart3, Shield, Lightbulb } from "lucide-react";
-import { categories } from "@/components/pricing/pricingData";
-import PlanCarousel from "@/components/pricing/PlanCarousel";
-import CustomPlanBuilder from "@/components/pricing/CustomPlanBuilder";
 import PricingNetlifyFormEmbed from "@/components/pricing/PricingNetlifyFormEmbed";
 import { SelectedPlansProvider } from "@/contexts/SelectedPlansContext";
 import logo from "@/assets/trans-logo.webp";
@@ -88,7 +85,7 @@ const Pricing = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-              Plans & <span className="text-gradient">Pricing</span>
+              Know <span className="text-gradient">More</span>
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl font-body max-w-2xl mx-auto">
               We don't just provide services — we build a complete customer acquisition and revenue system for your business.
@@ -137,7 +134,7 @@ const Pricing = () => {
         </section>
 
         {/* Plans */}
-        <section className="section-padding" id="plans">
+        {/* <section className="section-padding" id="plans">
           <div className="max-w-7xl mx-auto">
             <motion.div
               className="text-center mb-12"
@@ -189,17 +186,15 @@ const Pricing = () => {
 
             <CustomPlanBuilder />
           </div>
-        </section>
+        </section> */}
 
         {/* Netlify Form Embed */}
-        <PricingNetlifyFormEmbed />
-
         {/* Footer */}
-        <footer className="border-t border-border py-8 text-center">
+        {/* <footer className="border-t border-border py-8 text-center">
           <p className="text-sm text-muted-foreground font-body">
             © {new Date().getFullYear()} VyperX. All rights reserved.
           </p>
-        </footer>
+        </footer> */}
       </div>
     </SelectedPlansProvider>
         <Footer></Footer>

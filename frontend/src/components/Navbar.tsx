@@ -6,7 +6,7 @@ import logo from "@/assets/trans-logo.webp";
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "What We Deliver", href: "#deliverables" },
-  { label: "Pricing", href: "pricing" },
+  { label: "About Us", href: "pricing" },
   { label: "Careers", href: "careers" },
 ];
 
