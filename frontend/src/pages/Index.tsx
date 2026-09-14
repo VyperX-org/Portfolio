@@ -10,6 +10,7 @@ import Deliverables from "@/components/Deliverables";
 import ContactForm from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { SelectedPlansProvider } from "@/contexts/SelectedPlansContext";
+import {Analytics} from "@vercel/analytics/react";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,6 +23,7 @@ const Index = () => {
   return (
     <SelectedPlansProvider>
       <LoadingScreen isLoading={isLoading} />
+      <Analytics/>
       <Navbar />
       <main>
         <HeroSection />
