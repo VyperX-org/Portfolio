@@ -25,65 +25,65 @@ interface Vacancy {
 }
 
 const vacancies: Vacancy[] = [
-  {
-    id: 1,
-    title: "Social Media Manager",
-    department: "Marketing",
-    location: "Kolkata / Remote",
-    type: "Full-time",
-    description: "Manage and grow social media presence for multiple client brands. Create content calendars, engage with audiences, and drive measurable growth.",
-    requirements: [
-      "2+ years social media experience",
-      "Proficiency in Meta Business Suite",
-      "Strong copywriting skills",
-      "Analytics & reporting experience"
-    ],
-    formLink: "https://forms.gle/Yb72ArKniXCMJdSL9"
-  },
-  {
-    id: 2,
-    title: "Professional Video Editor",
-    department: "Content",
-    location: "Kolkata / Remote",
-    type: "Full-time",
-    description: "Edit high-quality UGC and brand videos for social media ads and organic content. Work with creators and the content team to produce scroll-stopping visuals.",
-    requirements: [
-      "Proficiency in Premiere Pro / After Effects",
-      "Understanding of social media trends",
-      "Portfolio of edited short-form content",
-      "Quick turnaround ability"
-    ],
-    formLink: "https://forms.gle/7zUe2Ju1L7wWSpkf8"
-  },
-  {
-    id: 3,
-    title: "Growth & Sales Development Associate",
-    department: "Sales & Growth",
-    location: "Kolkata / Remote",
-    type: "Full-time",
-    description: "Drive business growth by generating and qualifying leads, executing outbound outreach, and building a strong sales pipeline. Work closely with the marketing and strategy team to convert prospects into clients and contribute to revenue growth.",
-    requirements: [
-      "Strong communication and persuasion skills",
-      "Experience in cold outreach (calls/emails/LinkedIn)",
-      "Basic understanding of sales funnels and CRM tools",
-      "Ability to research and identify potential leads",
-      "Target-driven mindset with ownership attitude"
-    ],
-    formLink: "https://forms.gle/5knob9dPp9rF3vXq9"
-  },
-  {
-    id: 4,
-    title: "Graphic Designer",
-    department: "Design",
-    location: "Kolkata / Remote",
-    type: "Full-time / Freelance",
-    description: "Create stunning visual content for social media posts, ads, brand identities, and marketing materials.",
-    requirements: [
-      "Proficiency in Figma & Adobe Suite", "Strong typography & color sense",
-      "Portfolio showcasing social media designs", "Brand identity experience"
-    ],
-    formLink: "https://forms.gle/8wHcPmpvdoEHQX8SA"
-  },
+  // {
+  //   id: 1,
+  //   title: "Social Media Manager",
+  //   department: "Marketing",
+  //   location: "Kolkata / Remote",
+  //   type: "Full-time",
+  //   description: "Manage and grow social media presence for multiple client brands. Create content calendars, engage with audiences, and drive measurable growth.",
+  //   requirements: [
+  //     "2+ years social media experience",
+  //     "Proficiency in Meta Business Suite",
+  //     "Strong copywriting skills",
+  //     "Analytics & reporting experience"
+  //   ],
+  //   formLink: "https://forms.gle/Yb72ArKniXCMJdSL9"
+  // },
+  // {
+  //   id: 2,
+  //   title: "Professional Video Editor",
+  //   department: "Content",
+  //   location: "Kolkata / Remote",
+  //   type: "Full-time",
+  //   description: "Edit high-quality UGC and brand videos for social media ads and organic content. Work with creators and the content team to produce scroll-stopping visuals.",
+  //   requirements: [
+  //     "Proficiency in Premiere Pro / After Effects",
+  //     "Understanding of social media trends",
+  //     "Portfolio of edited short-form content",
+  //     "Quick turnaround ability"
+  //   ],
+  //   formLink: "https://forms.gle/7zUe2Ju1L7wWSpkf8"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Growth & Sales Development Associate",
+  //   department: "Sales & Growth",
+  //   location: "Kolkata / Remote",
+  //   type: "Full-time",
+  //   description: "Drive business growth by generating and qualifying leads, executing outbound outreach, and building a strong sales pipeline. Work closely with the marketing and strategy team to convert prospects into clients and contribute to revenue growth.",
+  //   requirements: [
+  //     "Strong communication and persuasion skills",
+  //     "Experience in cold outreach (calls/emails/LinkedIn)",
+  //     "Basic understanding of sales funnels and CRM tools",
+  //     "Ability to research and identify potential leads",
+  //     "Target-driven mindset with ownership attitude"
+  //   ],
+  //   formLink: "https://forms.gle/5knob9dPp9rF3vXq9"
+  // },
+  // {
+  //   id: 4,
+  //   title: "Graphic Designer",
+  //   department: "Design",
+  //   location: "Kolkata / Remote",
+  //   type: "Full-time / Freelance",
+  //   description: "Create stunning visual content for social media posts, ads, brand identities, and marketing materials.",
+  //   requirements: [
+  //     "Proficiency in Figma & Adobe Suite", "Strong typography & color sense",
+  //     "Portfolio showcasing social media designs", "Brand identity experience"
+  //   ],
+  //   formLink: "https://forms.gle/8wHcPmpvdoEHQX8SA"
+  // },
 ];
 
 const values = [
@@ -196,41 +196,62 @@ const Careers = () => {
             Open <span className="text-gradient">Positions</span>
           </motion.h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {vacancies.map((vacancy, i) => (
-              <motion.div
-                key={vacancy.id}
-                className="group card-gradient border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-[0_8px_30px_hsl(166_76%_58%/0.1)] bg-gradient-to-br from-secondary via-background to-primary/5"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 * i }}
-                onClick={() => setSelected(vacancy)}
-              >
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-lg font-display font-bold mb-1 group-hover:text-primary transition-colors">{vacancy.title}</h3>
-                    <p className="text-sm text-primary font-body font-medium">{vacancy.department}</p>
+          {vacancies.length > 0 ? (
+            <div className="grid md:grid-cols-2 gap-6">
+              {vacancies.map((vacancy, i) => (
+                <motion.div
+                  key={vacancy.id}
+                  className="group card-gradient border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-[0_8px_30px_hsl(166_76%_58%/0.1)] bg-gradient-to-br from-secondary via-background to-primary/5"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 * i }}
+                  onClick={() => setSelected(vacancy)}
+                >
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className="text-lg font-display font-bold mb-1 group-hover:text-primary transition-colors">{vacancy.title}</h3>
+                      <p className="text-sm text-primary font-body font-medium">{vacancy.department}</p>
+                    </div>
+                    <ChevronRight size={20} className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all mt-1" />
                   </div>
-                  <ChevronRight size={20} className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all mt-1" />
-                </div>
-                <div className="flex flex-wrap gap-3 mt-4">
-                  <span className="flex items-center gap-1.5 text-xs text-muted-foreground font-body">
-                    <MapPin size={12} /> {vacancy.location}
-                  </span>
-                  <span className="flex items-center gap-1.5 text-xs text-muted-foreground font-body">
-                    <Clock size={12} /> {vacancy.type}
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground font-body mt-3 line-clamp-2">{vacancy.description}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          {vacancies.length === 0 && (
-            <div className="text-center py-16">
-              <Briefcase size={48} className="text-muted-foreground mx-auto mb-4" />
-              <p className="text-muted-foreground font-body">No open positions right now. Check back soon!</p>
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    <span className="flex items-center gap-1.5 text-xs text-muted-foreground font-body">
+                      <MapPin size={12} /> {vacancy.location}
+                    </span>
+                    <span className="flex items-center gap-1.5 text-xs text-muted-foreground font-body">
+                      <Clock size={12} /> {vacancy.type}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground font-body mt-3 line-clamp-2">{vacancy.description}</p>
+                </motion.div>
+              ))}
             </div>
+          ) : (
+            <motion.div
+              className="card-gradient border border-border/80 rounded-2xl p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-xl backdrop-blur-sm"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-5 text-primary shadow-[0_0_25px_hsl(166_76%_58%/0.15)]">
+                <Briefcase size={28} />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-display font-bold mb-3 text-foreground">
+                Want to Join our team?
+              </h3>
+              <p className="text-lg sm:text-xl font-display text-gradient font-semibold mb-4">
+                Wait for it beacuse good things takes time ✨
+              </p>
+              {/* <p className="text-muted-foreground font-body text-sm sm:text-base max-w-lg mx-auto mb-8 leading-relaxed">
+                We do not have active openings right now, but exceptional talent is always welcome. Feel free to drop us your CV and portfolio.
+              </p> */}
+              <a
+                href="https://mail.google.com/mail/u/0/?hl=en/#inbox?compose=GTvVlcSKjRTBRnzWLtnCvdlVspfBqVhrRGtgKZjDSsfsCfbZfLfFRwGfgpMLmNTpXQxtjJrCWqVjt"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-xl hover:opacity-90 transition-opacity font-body text-sm"
+              >
+                Send Us Your Resume
+              </a>
+            </motion.div>
           )}
         </div>
       </section>

@@ -40,8 +40,8 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Services</h4>
             <ul className="space-y-3 text-sm text-muted-foreground font-body">
-              <li><a href="/pricing" className="hover:text-primary transition-colors">UGC Content</a></li>
-              <li><a href="/pricing" className="hover:text-primary transition-colors">Website Development</a></li>
+              <li><a href="/#ugc-services" className="hover:text-primary transition-colors">UGC Content</a></li>
+              <li><a href="/#web-services" className="hover:text-primary transition-colors">Website Development</a></li>
               <li><a href="/pricing" className="hover:text-primary transition-colors">Marketing & Advertising</a></li>
               <li><a href="/pricing" className="hover:text-primary transition-colors">Social Media Management</a></li>
               <li><a href="/pricing" className="hover:text-primary transition-colors">Meta Ads</a></li>
@@ -52,11 +52,12 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Explore</h4>
             <ul className="space-y-3 text-sm text-muted-foreground font-body">
-              <li><a href="#services" className="hover:text-primary transition-colors">Our Process</a></li>
-              <li><a href="#deliverables" className="hover:text-primary transition-colors">Deliverables</a></li>
+              <li><a href="/#clients" className="hover:text-primary transition-colors">Our Clients</a></li>
+              <li><a href="/#deliverables" className="hover:text-primary transition-colors">Deliverables</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">Our Process</a></li>
               <li><a href="/pricing" className="hover:text-primary transition-colors">About Us</a></li>
               <li><Link to="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
-              <li><a href="#contact" className="hover:text-primary transition-colors">Book a Call</a></li>
+              <li><a href="/#contact" className="hover:text-primary transition-colors">Book a Call</a></li>
               <li><Link to="/policies/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
               <li><Link to="/policies/terms-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
             </ul>

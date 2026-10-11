@@ -1,13 +1,55 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Zap } from "lucide-react";
+import logo from "@/assets/trans-logo.webp";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center section-padding pt-32">
+    <section className="relative min-h-screen flex items-center justify-center section-padding pt-32 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[80vw] max-w-96 h-[80vw] max-h-96 rounded-full bg-primary/5 blur-[100px]" />
-      <div className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[70vw] max-w-72 h-[70vw] max-h-72 rounded-full bg-primary/8 blur-[80px]" />   
+        <div className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[70vw] max-w-72 h-[70vw] max-h-72 rounded-full bg-primary/8 blur-[80px]" />   
+      </div>
+
+      {/* Mobile-only autoplay animated logo with gradient glow behind hero content */}
+      <div className="md:hidden absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-0">
+        <motion.div
+          className="relative flex items-center justify-center w-72 h-72"
+          animate={{
+            scale: [0.94, 1.05, 0.94],
+            opacity: [0.35, 0.55, 0.35],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          {/* Radial gradient aura */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/30 via-emerald-500/20 to-teal-300/10 blur-[60px] animate-pulse" />
+
+          {/* Autoplay rotating gradient backdrop ring */}
+          <motion.div
+            className="absolute w-56 h-56 rounded-full border border-primary/20 bg-gradient-to-br from-primary/15 via-transparent to-primary/10"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          />
+
+          {/* Floating animated logo with gradient shadow & mix-blend */}
+          <motion.img
+            src={logo}
+            alt=""
+            className="relative w-44 h-auto object-contain mix-blend-lighten filter drop-shadow-[0_0_25px_hsl(166_76%_58%/0.5)]"
+            animate={{
+              y: [-6, 6, -6],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </motion.div>
       </div>
  
       <div className="relative z-10 max-w-5xl mx-auto text-center px-5 sm:px-6">

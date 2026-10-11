@@ -29,7 +29,7 @@ const UGCSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding w-full" ref={ref}>
+    <section id="ugc-services" className="section-padding w-full" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Video mockups */}

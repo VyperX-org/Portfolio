@@ -16,7 +16,7 @@ const WebsiteSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding" ref={ref}>
+    <section id="web-services" className="section-padding" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div

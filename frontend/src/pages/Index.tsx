@@ -6,6 +6,7 @@ import WhyVyperX from "@/components/WhyVyperX";
 import MonthlyExpect from "@/components/MonthlyExpect";
 import WebsiteSection from "@/components/WebsiteSection";
 import UGCSection from "@/components/UGCSection";
+import ClientsSection from "@/components/ClientsSection";
 import Deliverables from "@/components/Deliverables";
 import ContactForm from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -16,7 +17,18 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      if (window.location.hash) {
+        const targetId = window.location.hash.slice(1);
+        const element = document.getElementById(targetId);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+        }
+      }
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -31,6 +43,7 @@ const Index = () => {
         <MonthlyExpect />
         <WebsiteSection />
         <UGCSection />
+        <ClientsSection />
         <Deliverables />
         <ContactForm />
       </main>
